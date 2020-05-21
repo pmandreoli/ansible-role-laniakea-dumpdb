@@ -1,0 +1,7 @@
+- name: drop galaxy tool database receiver
+  become: true
+  become_user: postgres
+  postgresql_db:
+    name: galaxy_tools
+    state: absent
+

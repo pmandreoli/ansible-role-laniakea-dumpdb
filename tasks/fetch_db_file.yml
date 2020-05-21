@@ -1,0 +1,8 @@
+--- 
+
+- name: Store file into master machine
+  become: true
+  become_method: sudo
+  fetch:
+    src: /tmp/galaxy_tools.bak
+    dest: /home/pitta/Scrivania	

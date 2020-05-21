@@ -1,0 +1,6 @@
+- name: restore receiver db with the dump file
+  become: true
+  become_user: postgres
+    name: galaxy_tools
+    state: restore
+    target: deve essere psql

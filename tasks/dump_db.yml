@@ -1,0 +1,8 @@
+---
+- name: dump db on file into tmp
+  become: true
+  become_user: postgres
+  postgresql_db: 
+    name: galaxy_tools
+    state: dump
+    target: /tmp/galaxy_tools.bak
