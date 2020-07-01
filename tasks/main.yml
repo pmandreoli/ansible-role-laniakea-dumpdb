@@ -1,6 +1,20 @@
 ---
 # tasks file for ansible-role-laniakea-dumpdb
+# include task to dump the galaxy_tools db on the donor machine
 - include: dump_db.yml 
 
+#TODO tar.gz of tools repository and shed_tool_conf.xml file
+
+# save dump file on the master machine 
 - include: fetch_db_file.yml
+
+# drop the galaxy_tools db on the receiver machine
+- include: drop_db_receiver.yml
+
+# stop receiver ga to re
+- include: stop_ga_receiver.yml
+# restore the galaxy_tools db using donor dump_file
+- include: restore_receiverdb.yml
+# task   
+- include: drop_db_receiver.yml
 
